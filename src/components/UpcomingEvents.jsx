@@ -4,24 +4,31 @@ import "./UpcomingEvents.css";
 const events = [
   {
     id: "01",
-    category: "Workshop",
+    category: "Talk",
     date: "Date TBA",
-    title: "Event title one",
-    description: "A short description of the event goes here.",
+    title: "Event name",
+    description: "Short description of this event.",
   },
   {
     id: "02",
-    category: "Hackathon",
+    category: "Workshop",
     date: "Date TBA",
-    title: "Event title two",
-    description: "A short description of the event goes here.",
+    title: "Event name",
+    description: "Short description of this event.",
   },
   {
     id: "03",
-    category: "Talk",
+    category: "Sprint",
     date: "Date TBA",
-    title: "Event title three",
-    description: "A short description of the event goes here.",
+    title: "Event name",
+    description: "Short description of this event.",
+  },
+  {
+    id: "04",
+    category: "Session",
+    date: "Date TBA",
+    title: "Event name",
+    description: "Short description of this event.",
   },
 ];
 
@@ -41,18 +48,29 @@ export default function UpcomingEvents() {
 
         <div className="upcoming-events-list">
           {events.map((event) => (
-            <article className="upcoming-event-card" key={event.id}>
-              <span className="upcoming-event-number">{event.id}</span>
+            <article
+              className="upcoming-event-card"
+              key={event.id}
+            >
+              <span className="upcoming-event-number">
+                {event.id}
+              </span>
+
               <p className="upcoming-event-meta">
                 {event.category} · {event.date}
               </p>
-              <h3>{event.title}</h3>
-              <p className="upcoming-event-description">
-                {event.description}
-              </p>
-              <span className="upcoming-event-link">
-                Details coming soon
-              </span>
+
+              <div className="upcoming-event-content">
+                <h3>{event.title}</h3>
+
+                <p className="upcoming-event-description">
+                  {event.description}
+                </p>
+
+                <span className="upcoming-event-link">
+                  LINK COMING SOON
+                </span>
+              </div>
             </article>
           ))}
         </div>
